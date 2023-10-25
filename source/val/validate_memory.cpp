@@ -504,6 +504,8 @@ spv_result_t ValidateVariable(ValidationState_t& _, const Instruction* inst) {
               "outside of a function";
   }
 
+  //+DOGOT
+  /*
   // SPIR-V 3.32.8: Check that pointer type and variable type have the same
   // storage class.
   const auto result_storage_class_index = 1;
@@ -515,6 +517,8 @@ spv_result_t ValidateVariable(ValidationState_t& _, const Instruction* inst) {
            << "Its Storage Class operand must be the same as the Storage Class "
            << "operand of the result type.";
   }
+  */
+  //-DOGOT
 
   // Variable pointer related restrictions.
   const auto pointee = _.FindDef(result_type->word(3));
